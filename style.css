@@ -1,128 +1,208 @@
+/* -------- RESET -------- */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, sans-serif;
+    font-family: "Segoe UI", Tahoma, sans-serif;
 }
 
 body {
-    line-height: 1.6;
-    background-color: #f4f4f4;
-    color: #333;
+    line-height: 1.7;
+    background: radial-gradient(circle at center, #0f2a2a, #020617);
+    color: #e5e7eb;
 }
 
+/* -------- HEADER -------- */
 header {
-    background: #222;
-    color: #fff;
-    padding: 1rem;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(10px);
+    color: #ffffff;
+    padding: 1.2rem;
     text-align: center;
 }
 
 header h1 {
     margin-bottom: 0.5rem;
+    font-size: 1.8rem;
+    color: #22f5e3;
 }
 
 nav a {
-    color: #fff;
-    margin: 0 10px;
+    color: #9ca3af;
+    margin: 0 12px;
     text-decoration: none;
-    font-weight: bold;
+    font-weight: 600;
+    transition: color 0.3s ease;
 }
 
+nav a:hover {
+    color: #22f5e3;
+}
+
+/* -------- SECTIONS -------- */
 section {
-    padding: 2rem 1rem;
+    padding: 4rem 1.5rem;
     max-width: 1100px;
     margin: auto;
 }
 
 section h2 {
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
     text-align: center;
-    color: #222;
+    font-size: 2rem;
+    color: #ffffff;
 }
 
+/* -------- ABOUT -------- */
 .about p {
     text-align: center;
-    max-width: 700px;
+    max-width: 750px;
     margin: auto;
+    font-size: 1.05rem;
+    color: #9ca3af;
 }
 
+/* -------- SKILLS -------- */
 .skills-list {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 10px;
+    gap: 12px;
 }
 
 .skill {
-    background: #222;
-    color: #fff;
-    padding: 10px 15px;
-    border-radius: 5px;
+    background: rgba(34, 245, 227, 0.1);
+    color: #22f5e3;
+    padding: 12px 18px;
+    border-radius: 25px;
+    font-size: 0.95rem;
+    border: 1px solid rgba(34, 245, 227, 0.3);
+    transition: all 0.3s ease;
 }
 
+.skill:hover {
+    background: #22f5e3;
+    color: #020617;
+    transform: translateY(-4px);
+    box-shadow: 0 0 20px rgba(34, 245, 227, 0.6);
+}
+
+/* -------- PROJECTS -------- */
 .projects {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 20px;
+    gap: 25px;
 }
 
 .project {
-    background: #fff;
-    padding: 1rem;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    background: rgba(255, 255, 255, 0.04);
+    padding: 1.5rem;
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 0 30px rgba(34, 245, 227, 0.15);
+}
+
+/* -------- CONTACT -------- */
+.contact {
+    background: linear-gradient(135deg, #022c2c, #020617);
+    border-radius: 20px;
+    padding: 4rem 1.5rem;
+}
+
+.contact h2 {
+    color: #22f5e3;
 }
 
 .contact form {
-    max-width: 500px;
+    max-width: 520px;
     margin: auto;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 2.5rem;
+    border-radius: 20px;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 15px;
+    backdrop-filter: blur(10px);
 }
 
 .contact input,
 .contact textarea {
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    font-size: 1rem;
+    background: transparent;
+    color: #ffffff;
 }
 
+.contact input::placeholder,
+.contact textarea::placeholder {
+    color: #9ca3af;
+}
+
+.contact input:focus,
+.contact textarea:focus {
+    outline: none;
+    border-color: #22f5e3;
+}
+
+/* Button */
 .contact button {
-    padding: 10px;
-    background: #222;
-    color: #fff;
+    padding: 14px;
+    background: linear-gradient(135deg, #22f5e3, #06b6d4);
+    color: #020617;
     border: none;
+    border-radius: 40px;
+    font-size: 1rem;
+    font-weight: 600;
     cursor: pointer;
-    border-radius: 5px;
+    transition: all 0.3s ease;
 }
 
+.contact button:hover {
+    transform: scale(1.07);
+    box-shadow: 0 0 30px rgba(34, 245, 227, 0.7);
+}
+
+/* -------- FOOTER -------- */
 footer {
-    background: #222;
-    color: #fff;
+    background: #020617;
+    color: #9ca3af;
     text-align: center;
-    padding: 1rem;
-    margin-top: 2rem;
+    padding: 1.2rem;
+    margin-top: 3rem;
+    font-size: 0.9rem;
 }
 
+/* -------- MEDIA QUERIES -------- */
 
+/* Tablet */
 @media (min-width: 768px) {
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1.5rem 3rem;
+    }
+
     .projects {
         grid-template-columns: repeat(2, 1fr);
     }
 }
 
+/* Desktop */
 @media (min-width: 1024px) {
-    header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 1rem 3rem;
+    header h1 {
+        font-size: 2.2rem;
     }
 
-    nav {
-        text-align: right;
+    section h2 {
+        font-size: 2.3rem;
     }
 
     .projects {
